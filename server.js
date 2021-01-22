@@ -4,6 +4,8 @@
 require('dotenv').config();
 
 const express = require('express');
+const path = require('path');
+const cors = require('cors');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const passport = require('passport');
@@ -25,6 +27,8 @@ mongoose.connection.on('error', (err) => {
 })
 
 //---------------- MiddleWares -------------//
+//CROS MW
+app.use(cors());
 //Body Parser MW
 app.use(bodyParser.json());
 
@@ -33,9 +37,11 @@ app.use(bodyParser.json());
 app.use(passport.initialize());
 app.use(passport.session());
 require('./config/passport')(passport);
-
-
 //---------------- MiddleWares -------------//
+
+
+//Static public folder
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', (req, res) => {
     res.send('I am alive')

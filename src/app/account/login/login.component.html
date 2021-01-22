@@ -1,16 +1,22 @@
+
+
 <div fxLayoutAlign="center center" fxFlexFill class="main-div">
-    <mat-card fxFlex="25">
-        <mat-toolbar color="primary">SE CONNECTER</mat-toolbar>
-        <form fxLayoutAlign="stretch" fxLayout="column" class="login-form">
-            <mat-form-field >
-              <input matInput placeholder="Entrez votre Email svp" >
-            </mat-form-field>
-          
-            <mat-form-field >
-                <input matInput type="password" placeholder="Entrez votre Mot de passe" >
-            </mat-form-field>
-            <button mat-raised-button type="submit" class="mt-5" color="primary"> Connexion </button>
-          </form>
-          
-    </mat-card>
+  <mat-card fxFlex="25">
+    <mat-toolbar color="primary">SE CONNECTER</mat-toolbar>
+    <form fxLayoutAlign="stretch" fxLayout="column" class="login-form">
+
+      <mat-form-field>
+        <input matInput placeholder="Entrez votre Email svp">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput type="password" placeholder="Entrez votre Mot de passe">
+      </mat-form-field>
+
+      <a [routerLink]="['../register']" class="btn btn-link">Créer un compte</a>
+
+      <button mat-raised-button type="submit" class="mt-5" color="primary"> Connexion </button>
+    </form>
+
+  </mat-card>
 </div>
