@@ -1,6 +1,5 @@
 
 
-
 const express = require('express');
 const router = express.Router();
 const jwt = require('jsonwebtoken');
@@ -45,8 +44,6 @@ router.post('/autho', (req, res) => {
 
 
             //User is Valid
-            //
-
             const ONE_DAY = 86400; //Token Validity in seconds
 
             //Generating the token 

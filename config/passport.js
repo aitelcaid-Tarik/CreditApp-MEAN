@@ -12,14 +12,14 @@ module.exports = function (passport) {
     opts.secretOrKey = process.env.SECRET;
 
     passport.use(new JwtStrategy(opts, (jwt_payload, done) => {
-        User.findById(jwt_payload.use._id, (err, user) => {
-            if (err){
+        User.findById(jwt_payload.user._id, (err, user) => {
+            if (err) {
                 return done(err, false);
 
             }
 
-            if (user){
-                return done(null, user);  
+            if (user) {
+                return done(null, user);
             }
         })
     }));

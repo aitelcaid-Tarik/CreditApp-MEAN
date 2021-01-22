@@ -1,4 +1,5 @@
 
+
 const mongoose = require('mongoose');
 
 const CreditSchema = mongoose.Schema({
@@ -8,7 +9,7 @@ const CreditSchema = mongoose.Schema({
     duree: { type: Number },
     date: { type: String },
     numCre: { type: Number },
-    numClient: { type: Number, required: true }
+    idClient: { type: String, required: true }
 })
 
 const Credit = mongoose.model('Credit', CreditSchema);
