@@ -30,6 +30,7 @@ app.use(bodyParser.json());
 //Passport MW
 app.use(passport.initialize());
 app.use(passport.session());
+require('./config/passport')(passport);
 
 
 //---------------- MiddleWares -------------//

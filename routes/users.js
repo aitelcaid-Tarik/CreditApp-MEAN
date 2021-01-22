@@ -1,6 +1,10 @@
+
+
+
 const express = require('express');
 const router = express.Router();
-const User = require('../models/user.js')
+const jwt = require('jsonwebtoken');
+const User = require('../models/user.js');
 
 
 module.exports = router;
@@ -12,6 +16,7 @@ router.post('/autho', (req, res) => {
     const password = req.body.password;
 
     const query = { email }
+
     //Check the user exists
     User.findOne(query, (err, user) => {
         if (err) {
@@ -29,6 +34,8 @@ router.post('/autho', (req, res) => {
         }
 
         user.isPasswordMatch(password, user.password, (err, isMatch) => {
+
+            //Invalid Password
             if (!isMatch) {
                 return res.send({
                     success: false,
@@ -36,15 +43,27 @@ router.post('/autho', (req, res) => {
                 });
             }
 
+
+            //User is Valid
+            //
+
+            const ONE_DAY = 86400; //Token Validity in seconds
+
+            //Generating the token 
+            const token = jwt.sign({ user }, process.env.SECRET, { expiresIn: ONE_DAY });
+
             let returnUser = {
                 name: user.name,
                 email: user.email,
                 id: user._id
             }
+
+            //Send the response back
             return res.send({
                 success: true,
                 message: 'You can login now',
-                user
+                user: returnUser,
+                token
             });
 
         })
