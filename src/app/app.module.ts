@@ -19,6 +19,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { UserService } from './services/user.service';
 import { HomeComponent } from './main/home/home.component';
 import { AuthGuard } from './guards/auth.guard';
+import { NavbarComponent } from './main/navbar/navbar.component';
 
 const AppRoutes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -31,7 +32,8 @@ const AppRoutes: Routes = [
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    HomeComponent
+    HomeComponent,
+    NavbarComponent
 
   ],
   imports: [

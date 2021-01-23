@@ -24,4 +24,8 @@ export class UserService {
   isLoggedIn() : boolean{
     return !!localStorage.getItem(AppUtil.AUTH_TOKEN);
   }
+
+  logOut(){
+    localStorage.removeItem(AppUtil.AUTH_TOKEN);
+  }
 }

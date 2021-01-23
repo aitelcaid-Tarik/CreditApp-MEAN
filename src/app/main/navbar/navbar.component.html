@@ -1,0 +1,46 @@
+<nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
+    <div class="container">
+
+        <a href="#" class="navbar-brand"> <img src="logo.png" width="45" alt=""
+                class="d-inline-block align-middle mr-2"> <span class="text-uppercase font-weight-bold">BANK</span>
+        </a>
+
+        <div>
+            <ul class="navbar-nav  ulmarg">
+
+                <li [routerLinkActive]="['active']" class="nav-item "><a class="n nav-link " [routerLink]="['/']">
+                        <i class="fas fa-bell"></i> ANNUITE
+                    </a></li>
+
+                <li [routerLinkActive]="['active']" class=" nav-item"><a class=" n nav-link " [routerLink]=" ['/']"> <i
+                            class="fas fa-weight"></i>
+                        CAPITAL
+                    </a></li>
+
+                <li class=" nav-item"><a class="n nav-link">
+                        <i class="fas fa-user-clock"></i> DUREE
+                    </a></li>
+
+            </ul>
+        </div>
+
+        <div id="cnav2">
+            <ul class="nav navbar-nav navbar-right">
+
+                <li [routerLinkActive]="['active']" class="nav-item"><a class="n nav-link" [routerLink]="['/']">
+                        <i class="fas fa-user"></i> MON COMPTE
+                    </a></li>
+
+                <li class="nav-item">
+                    <a href="#" (click)="onLogOutClicked()" class="n nav-link"> 
+                        <i class="fas fa-sign-out-alt"></i>
+                        SE DECONNECTER
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+    </div>
+
+</nav>
