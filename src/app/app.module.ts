@@ -17,17 +17,21 @@ import { RegisterComponent } from './account/register/register.component';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { UserService } from './services/user.service';
+import { HomeComponent } from './main/home/home.component';
+import { AuthGuard } from './guards/auth.guard';
 
 const AppRoutes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
+  { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    HomeComponent
 
   ],
   imports: [
@@ -47,7 +51,8 @@ const AppRoutes: Routes = [
   ],
   providers: [
     { provide: LocationStrategy, useClass: HashLocationStrategy },
-    UserService],
+    UserService,
+    AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
