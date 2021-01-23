@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -16,12 +16,11 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { RegisterComponent } from './account/register/register.component';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
+import { UserService } from './services/user.service';
 
-
-
-const AppRoutes: Routes = [ 
-  { path : 'login', component: LoginComponent },
-  { path : 'register', component: RegisterComponent },
+const AppRoutes: Routes = [
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
 ];
 
 @NgModule({
@@ -29,7 +28,7 @@ const AppRoutes: Routes = [
     AppComponent,
     LoginComponent,
     RegisterComponent
-    
+
   ],
   imports: [
     BrowserModule,
@@ -46,7 +45,9 @@ const AppRoutes: Routes = [
     FormsModule,
     RouterModule.forRoot(AppRoutes)
   ],
-  providers: [],
+  providers: [
+    { provide: LocationStrategy, useClass: HashLocationStrategy },
+    UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
