@@ -7,6 +7,7 @@ import { UserService } from 'src/app/services/user.service';
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss']
 })
+
 export class NavbarComponent implements OnInit {
 
   constructor(private userService: UserService, private router: Router) { }
