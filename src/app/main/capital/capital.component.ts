@@ -7,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CapitalComponent implements OnInit {
 
+  annuite: string = "";
+  taux: string = "";
+  duree: string = "";
+
   constructor() { }
 
   ngOnInit(): void {

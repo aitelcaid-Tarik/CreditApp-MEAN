@@ -43,6 +43,7 @@ router.post('/add', passport.authenticate('jwt', { session: false }), (req, res)
 //List all Credits
 router.post('/list', passport.authenticate('jwt', { session: false }), (req, res) => {
     const idClient = req.body.idClient;
+
     Credit.find({ idClient }, (err, credits) => {
         if (err) {
             return res.send({

@@ -10,6 +10,8 @@ import { LoginComponent } from './account/login/login.component';
 import { RegisterComponent } from './account/register/register.component';
 import { HomeComponent } from './main/home/home.component';
 import { NavbarComponent } from './main/navbar/navbar.component';
+import { AnnuiteComponent } from './main/annuite/annuite.component';
+import { CapitalComponent } from './main/capital/capital.component';
 import { UserService } from './services/user.service';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { HttpClientModule } from '@angular/common/http';
@@ -20,18 +22,19 @@ import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AuthGuard } from './guards/auth.guard';
-import { AnnuiteComponent } from './main/annuite/annuite.component';
-import { CapitalComponent } from './main/capital/capital.component';
 import { DureeComponent } from './main/duree/duree.component';
-
+import { MatCarouselModule } from '@ngmodule/material-carousel';
+import { SliderComponent } from './main/slider/slider.component';
+import { CarouselModule } from 'ngx-owl-carousel-o';
+import {MatIconModule} from '@angular/material/icon';
 
 const AppRoutes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
-  { path: 'annuite', component: AnnuiteComponent },
-  { path: 'capital', component: CapitalComponent },
-  { path: 'duree', component: DureeComponent },
+  { path: 'annuite', component: AnnuiteComponent, canActivate: [AuthGuard] },
+  { path: 'capital', component: CapitalComponent, canActivate: [AuthGuard] },
+  { path: 'duree', component: DureeComponent, canActivate: [AuthGuard] },
 ];
 
 @NgModule({
@@ -43,7 +46,8 @@ const AppRoutes: Routes = [
     NavbarComponent,
     AnnuiteComponent,
     CapitalComponent,
-    DureeComponent
+    DureeComponent,
+    SliderComponent
 
   ],
   imports: [
@@ -56,10 +60,13 @@ const AppRoutes: Routes = [
     MatButtonModule,
     MatCardModule,
     MatToolbarModule,
+    MatCarouselModule.forRoot(),
     FontAwesomeModule,
     HttpClientModule,
     FormsModule,
-    RouterModule.forRoot(AppRoutes)
+    RouterModule.forRoot(AppRoutes),
+    CarouselModule,
+    MatIconModule
   ],
   providers: [
     { provide: LocationStrategy, useClass: HashLocationStrategy },

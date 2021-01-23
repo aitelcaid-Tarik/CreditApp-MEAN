@@ -7,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DureeComponent implements OnInit {
 
+  capital: string = "";
+  taux: string = "";
+  annuite: string = "";
+
   constructor() { }
 
   ngOnInit(): void {

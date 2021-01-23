@@ -4,11 +4,13 @@
     <form (submit)="onLogin()" fxLayoutAlign="stretch" fxLayout="column" class="login-form">
 
       <mat-form-field>
-        <input matInput placeholder="Entrez votre Email svp" [(ngModel)]="email" name="email">
+        <input matInput type="text" placeholder="Entrez votre Email svp" [(ngModel)]="email" name="email">
+        <mat-icon matSuffix>email</mat-icon>
       </mat-form-field>
 
       <mat-form-field>
-        <input matInput type="password" placeholder="Entrez votre Mot de passe" [(ngModel)]="password" name="password">
+        <input matInput type="password" placeholder="Entrez votre Mot de passe" [(ngModel)]="password" name="password"> 
+        <mat-icon matSuffix>vpn_key</mat-icon>
       </mat-form-field>
 
       <a [routerLink]="['../register']" class="btn btn-link">Créer un compte</a>

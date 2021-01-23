@@ -29,18 +29,18 @@ export class LoginComponent implements OnInit {
 
     }
 
-    this.userService.autho(user).subscribe(res => { 
-      if (!res.success){
+    this.userService.autho(user).subscribe(res => {
+      if (!res.success) {
         console.log(res.message);
         return false;
       }
 
-      this.userService.saveUseData(res.token,res.user);
+      this.userService.saveUseData(res.token, res.user);
       this.router.navigate(['/home']);
 
       return;
     });
-    
+
     return;
   }
 
