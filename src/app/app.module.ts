@@ -28,6 +28,7 @@ import { SliderComponent } from './main/slider/slider.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import {MatIconModule} from '@angular/material/icon';
 import { ContactUsComponent } from './main/contact-us/contact-us.component';
+import { FooterComponent } from './main/footer/footer.component';
 
 const AppRoutes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -49,7 +50,8 @@ const AppRoutes: Routes = [
     CapitalComponent,
     DureeComponent,
     SliderComponent,
-    ContactUsComponent
+    ContactUsComponent,
+    FooterComponent
 
   ],
   imports: [

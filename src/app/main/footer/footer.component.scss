@@ -1,0 +1,18 @@
+footer {
+    background-color: #4454b4;
+}
+
+footer mat-icon {
+    font-size: 40px;
+}
+
+footer .footer_image {
+    height: 40px;
+    width: 40px;
+    text-align: center;
+    margin: 15px 10px 20px 10px;
+}
+
+footer .footer_image:hover {
+    fill: white;
+}
