@@ -6,7 +6,6 @@ const CreditSchema = mongoose.Schema({
     annuite: { type: Number },
     duree: { type: Number },
     date: { type: String },
-    numCre: { type: Number },
     idClient: { type: String, required: true }
 })
 

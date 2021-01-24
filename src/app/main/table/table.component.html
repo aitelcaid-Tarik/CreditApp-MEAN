@@ -1,0 +1,39 @@
+<div class="container-table100">
+    <div class="wrap-table100">
+        <div class="table100 ver1 m-b-110">
+            <div class="table100-head">
+                <table>
+                    <thead>
+                        <tr class="row100 head">
+                            <th class="cell100 column0">#</th>
+                            <th class="cell100 column1">Montant</th>
+                            <th class="cell100 column2">Durée</th>
+                            <th class="cell100 column3">Taux</th>
+                            <th class="cell100 column4">Annuité</th>
+                            <th class="cell100 column5">Date</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+
+            <div class="table100-body js-pscroll">
+                <table>
+                    <tbody>
+
+                        <tr *ngFor="let credit of credits; let i = index " class="row100 body">
+                            <td class="cell100 column0"> {{i + 1}} </td>
+                            <td class="cell100 column1"> {{credit.capital}} </td>
+                            <td class="cell100 column2"> {{credit.duree}} </td>
+                            <td class="cell100 column3"> {{credit.taux}} </td>
+                            <td class="cell100 column4"> {{credit.annuite}} </td>
+                            <td class="cell100 column5"> {{credit.date}} </td>
+                        </tr>
+
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+</div>

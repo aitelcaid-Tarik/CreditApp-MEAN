@@ -17,14 +17,14 @@ router.post('/autho', (req, res) => {
         if (err) {
             return res.send({
                 success: false,
-                message: 'Error, please try again'
+                message: "Erreur, Veuillez réessayer plus tard"
             });
         }
 
         if (!user) {
             return res.send({
                 success: false,
-                message: 'Error, Account not found'
+                message: "Erreur, Compte non trouvé"
             });
         }
 
@@ -34,10 +34,9 @@ router.post('/autho', (req, res) => {
             if (!isMatch) {
                 return res.send({
                     success: false,
-                    message: 'Error, Invalid Password'
+                    message: "Erreur, Mot de passe incorrect"
                 });
             }
-
 
             //User is Valid
             const ONE_DAY = 86400; //Token Validity in seconds
@@ -54,7 +53,7 @@ router.post('/autho', (req, res) => {
             //Send the response back
             return res.send({
                 success: true,
-                message: 'You can login now',
+                message: "Vous pouvez connecter maintenant",
                 user: returnUser,
                 token
             });
@@ -77,13 +76,13 @@ router.post('/register', (req, res) => {
         if (err) {
             return res.send({
                 success: false,
-                message: 'Failed to save the user'
+                message: "Echec de l'enregistrement "
             });
         }
 
         res.send({
             success: true,
-            message: 'user saved',
+            message: "Client enregistré",
             user
         });
 

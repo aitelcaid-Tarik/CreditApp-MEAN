@@ -22,7 +22,7 @@ export class RegisterComponent implements OnInit {
   onRegister() {
 
     if (!this.name || !this.email || !this.password) {
-      console.log('all fields are required');
+      console.log("Tous les champs sont requis");
       return false;
     }
 
@@ -39,7 +39,7 @@ export class RegisterComponent implements OnInit {
           return;
         }
 
-        console.log('Account was created');
+        console.log("Votre compte a été créé");
         return this.router.navigate(['/login']);
       }
     );

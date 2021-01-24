@@ -32,7 +32,7 @@ export class SliderComponent implements OnInit {
     },
     nav: true
   }
-
+  
   constructor() { }
 
   ngOnInit(): void {

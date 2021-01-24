@@ -60,7 +60,6 @@ router.post('/add', passport.authenticate('jwt', { session: false }), (req, res)
         annuite: req.body.annuite,
         duree: req.body.duree,
         date: req.body.date,
-        numCre: req.body.numCre,
         idClient: req.body.idClient
     });
 
@@ -68,21 +67,21 @@ router.post('/add', passport.authenticate('jwt', { session: false }), (req, res)
         if (err) {
             return res.send({
                 success: false,
-                message: 'Error while saving, Please try again'
+                message: "Erreur lors de l'enregistrement , Veuillez réessayer plus tard"
             });
         }
 
         if (!credit) {
             return res.send({
                 success: false,
-                message: 'Failed to save the credit'
+                message: "Echec de l'enregistrement du credit"
             });
         }
 
         return res.send({
             success: true,
             credit,
-            message: 'Credit saved'
+            message: "Credit enregistré"
         });
 
     });
@@ -97,14 +96,14 @@ router.post('/list', passport.authenticate('jwt', { session: false }), (req, res
         if (err) {
             return res.send({
                 success: false,
-                message: 'Error while retrieving the credits'
+                message: "Erreur lors de la récupération des credits"
             });
         }
 
         if (!credits) {
             return res.send({
                 success: false,
-                message: 'You have no credits yet'
+                message: "Vous n'avez pas des credits"
             });
         }
 

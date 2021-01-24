@@ -36,7 +36,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { MatCarouselModule } from '@ngmodule/material-carousel';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import {MatIconModule} from '@angular/material/icon';
-import {TableModule} from 'primeng/table';
+import { TableComponent } from './main/table/table.component';
 
 const AppRoutes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -44,7 +44,7 @@ const AppRoutes: Routes = [
   { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
   { path: 'annuite', component: AnnuiteComponent, canActivate: [AuthGuard] },
   { path: 'capital', component: CapitalComponent, canActivate: [AuthGuard] },
-  { path: 'duree', component: DureeComponent, canActivate: [AuthGuard] },
+  { path: 'duree', component: DureeComponent, canActivate: [AuthGuard] }
 ];
 
 @NgModule({
@@ -59,7 +59,8 @@ const AppRoutes: Routes = [
     DureeComponent,
     SliderComponent,
     ContactUsComponent,
-    FooterComponent
+    FooterComponent,
+    TableComponent
 
   ],
   imports: [
@@ -78,8 +79,7 @@ const AppRoutes: Routes = [
     FormsModule,
     RouterModule.forRoot(AppRoutes),
     CarouselModule,
-    MatIconModule,
-    TableModule
+    MatIconModule
   ],
   providers: [
     { provide: LocationStrategy, useClass: HashLocationStrategy },

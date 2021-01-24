@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
 
   onLogin() {
     if (!this.email || !this.password) {
-      console.log("All fields are required");
+      console.log("Tous les champs sont requis");
       return false;
     }
 

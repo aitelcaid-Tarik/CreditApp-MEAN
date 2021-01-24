@@ -26,7 +26,7 @@ export class AnnuiteComponent implements OnInit {
 
   onCalculAnnuite() {
     if (!this.capital || !this.taux || !this.duree) {
-      console.log('all fields are required');
+      console.log("Tous les champs sont requis");
       return
     }
 
@@ -51,8 +51,8 @@ export class AnnuiteComponent implements OnInit {
     }
 
     this.credits.saveCredit(credit).subscribe(res => {
-      console.log('Credit saved');
-      console.log(res);
+      console.log('Votre credit a bien été enregistré');
+      this.router.navigate(['/annuite']);
 
     })
 

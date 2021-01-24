@@ -53,58 +53,6 @@
     </div>
 </div>
 
-<!--[value]="credits"--> 
-
-<div class="card">
-    <p-table [scrollable]="true" scrollHeight="335px" [resizableColumns]="true"
-        styleClass="p-datatable-gridlines">
-        <ng-template pTemplate="colgroup">
-            <colgroup>
-                <col style="width:5%">
-                <col style="width:20%">
-                <col style="width:15%">
-                <col style="width:15%">
-                <col style="width:15%">
-                <col style="width:30%">
-            </colgroup>
-        </ng-template>
-        <ng-template pTemplate="header">
-            <tr>
-                <th pResizableColumn pSortableColumn="#">
-                    <p-sortIcon field="#"> </p-sortIcon> #
-                </th>
-                <th pResizableColumn pSortableColumn="montant">
-                    <p-sortIcon field="montant"> </p-sortIcon> Montant
-                </th>
-                <th pResizableColumn pSortableColumn="duree">
-                    <p-sortIcon field="duree"></p-sortIcon> Durée
-                </th>
-                <th pResizableColumn pSortableColumn="taux">
-                    <p-sortIcon field="taux"></p-sortIcon> Taux
-                </th>
-                <th pResizableColumn pSortableColumn="annuité">
-                    <p-sortIcon field="annuité"></p-sortIcon> Annuité
-                </th>
-                <th pResizableColumn pSortableColumn="date">
-                    <p-sortIcon field="date"></p-sortIcon> Date
-                </th>
-
-
-            </tr>
-        </ng-template>
-        <ng-template pTemplate="body" let-credit>
-            <tr>
-                <td>{{credit.i}}</td>
-                <td>{{credit.montant}}</td>
-                <td>{{credit.duree}}</td>
-                <td>{{credit.taux}}</td>
-                <td>{{credit.annuite}}</td>
-                <td>{{credit.date}}</td>
-            </tr>
-        </ng-template>
-    </p-table>
-</div>
-
-
+<app-table></app-table>
 <app-contact-us></app-contact-us>
 <app-footer></app-footer>

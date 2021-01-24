@@ -9,28 +9,25 @@ export class CreditsService {
 
   constructor(private http: HttpClient) { }
 
-
   calAnnuite(body: any) {
     const token = localStorage.getItem(AppUtil.AUTH_TOKEN);
     const headers = new HttpHeaders().set('Authorization', `Bearer  ${token}`);
 
-    return this.http.post('credits/calculAnnuite', body, { headers });
+    return this.http.post<any>('credits/calculAnnuite', body, { headers });
   }
 
   saveCredit(credit: any) {
     const token = localStorage.getItem(AppUtil.AUTH_TOKEN);
     const headers = new HttpHeaders().set('Authorization', `Bearer  ${token}`);
 
-    return this.http.post('credits/add', credit, { headers });
+    return this.http.post<any>('credits/add', credit, { headers });
   }
 
   getCredits(query: any) {
     const token = localStorage.getItem(AppUtil.AUTH_TOKEN);
     const headers = new HttpHeaders().set('Authorization', `Bearer  ${token}`);
 
-    return this.http.post('credits/list', query, { headers });
+    return this.http.post<any>('credits/list', query, { headers });
   }
-
-
 
 }
