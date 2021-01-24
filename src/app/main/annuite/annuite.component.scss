@@ -1,10 +1,17 @@
 .main-div {
-    background-color: #ffffff;
-    padding: 40px 0px;
+    background-color: #f3f8fc;
+    padding: 60px 0px 0px 0px;
+}
+
+mat-toolbar {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
 }
 
 .main-div mat-card {
     padding: 0px;
+    border-radius: 8px;
+    box-shadow: 3px 3px 8px #b1b1b1, -3px -3px 8px #ffffff;
 }
 
 .main-div mat-card mat-toolbar {
@@ -16,4 +23,18 @@
 
 .login-form {
     padding: 20px;
+}
+
+.mat-raised-button {
+    height: 50px;
+    border-radius: 30px;
+    font-size: 20px;
+    font-weight: 600;
+    font-family: "Lato", sans-serif;
+    box-shadow: 3px 3px 8px #b1b1b1, -3px -3px 8px #ffffff;
+    transition: 0.5s;
+}
+
+.mat-raised-button:hover {
+    background: #9aa9ff;
 }

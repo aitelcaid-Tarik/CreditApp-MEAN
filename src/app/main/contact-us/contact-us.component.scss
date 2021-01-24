@@ -1,0 +1,34 @@
+.hr{
+    width: 10%;
+    background-color: #4454b4;
+    height: 2px;
+}
+
+section .row {
+    padding-top: 40px;
+    padding-bottom: 30px;
+}
+
+.contactUs {
+    background-color: #f3f8fc;
+    padding-top: 60px;
+    padding-bottom: 30px;
+}
+
+.contactUs mat-icon {
+    color: #4454b4;
+    font-size: 30px;
+    padding-bottom: 10px;
+}
+
+.contactUs button {
+    background-color: transparent;
+    border: 1px solid #4454b4;
+    border-radius: 5px;
+    color: #4454b4;
+}
+
+.contactUs button:hover {
+    color: white;
+    background-color: #9aa9ff;
+}

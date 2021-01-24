@@ -27,6 +27,7 @@ import { MatCarouselModule } from '@ngmodule/material-carousel';
 import { SliderComponent } from './main/slider/slider.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import {MatIconModule} from '@angular/material/icon';
+import { ContactUsComponent } from './main/contact-us/contact-us.component';
 
 const AppRoutes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -47,7 +48,8 @@ const AppRoutes: Routes = [
     AnnuiteComponent,
     CapitalComponent,
     DureeComponent,
-    SliderComponent
+    SliderComponent,
+    ContactUsComponent
 
   ],
   imports: [
