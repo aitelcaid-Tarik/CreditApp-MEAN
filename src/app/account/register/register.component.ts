@@ -38,9 +38,8 @@ export class RegisterComponent implements OnInit {
           console.log(res.message);
           return;
         }
-
         console.log("Votre compte a été créé");
-        return this.router.navigate(['/login']);
+        return this.router.navigate(['/home']);
       }
     );
 

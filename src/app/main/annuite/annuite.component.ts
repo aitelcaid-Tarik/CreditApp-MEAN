@@ -14,10 +14,10 @@ export class AnnuiteComponent implements OnInit {
   taux: Number | undefined;
   duree: Number | undefined;
   annuite: any;
+  date: string = new Date().toString().substring(0, 24);
   idClient: string = "";
 
-
-  constructor(private credits: CreditsService, private userService: UserService, private router: Router) { }
+  constructor(private creditService: CreditsService, private userService: UserService, private router: Router) { }
 
   ngOnInit(): void {
     const user = this.userService.getCurrentUser();
@@ -36,7 +36,7 @@ export class AnnuiteComponent implements OnInit {
       duree: this.duree,
     }
 
-    this.credits.calAnnuite(body).subscribe(res => {
+    this.creditService.calAnnuite(body).subscribe(res => {
       this.annuite = res;
     })
 
@@ -45,12 +45,11 @@ export class AnnuiteComponent implements OnInit {
       taux: this.taux,
       annuite: this.annuite,
       duree: this.duree,
-      date: "today",
-      numCre: "1",
+      date: this.date,
       idClient: this.idClient
     }
 
-    this.credits.saveCredit(credit).subscribe(res => {
+    this.creditService.saveCredit(credit).subscribe(res => {
       console.log('Votre credit a bien été enregistré');
       this.router.navigate(['/annuite']);
 

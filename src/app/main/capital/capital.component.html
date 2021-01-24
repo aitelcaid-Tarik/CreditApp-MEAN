@@ -3,7 +3,7 @@
 <div fxLayoutAlign="center" class="main-div mat-elevation-z6">
     <mat-card fxFlex="35">
         <mat-toolbar color="primary">Calculer le capital</mat-toolbar>
-        <form fxLayoutAlign="stretch" fxLayout="column" class="login-form">
+        <form (submit)="onCalculCapital()" fxLayoutAlign="stretch" fxLayout="column" class="login-form">
 
             <mat-form-field>
                 <input matInput type="text" placeholder="Entrez l'annuite" [(ngModel)]="annuite" name="annuite">

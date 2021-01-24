@@ -16,6 +16,20 @@ export class CreditsService {
     return this.http.post<any>('credits/calculAnnuite', body, { headers });
   }
 
+  calCapital(body: any) {
+    const token = localStorage.getItem(AppUtil.AUTH_TOKEN);
+    const headers = new HttpHeaders().set('Authorization', `Bearer  ${token}`);
+
+    return this.http.post<any>('credits/calculCapital', body, { headers });
+  }
+
+  calDuree(body: any) {
+    const token = localStorage.getItem(AppUtil.AUTH_TOKEN);
+    const headers = new HttpHeaders().set('Authorization', `Bearer  ${token}`);
+
+    return this.http.post<any>('credits/calculDuree', body, { headers });
+  }
+
   saveCredit(credit: any) {
     const token = localStorage.getItem(AppUtil.AUTH_TOKEN);
     const headers = new HttpHeaders().set('Authorization', `Bearer  ${token}`);

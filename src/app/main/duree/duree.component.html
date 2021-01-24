@@ -3,7 +3,7 @@
 <div fxLayoutAlign="center" class="main-div mat-elevation-z6">
     <mat-card fxFlex="35">
         <mat-toolbar color="primary">Calculer la duree</mat-toolbar>
-        <form fxLayoutAlign="stretch" fxLayout="column" class="login-form">
+        <form (submit)="onCalculDuree()" fxLayoutAlign="stretch" fxLayout="column" class="login-form">
 
             <mat-form-field>
                 <input matInput type="text" placeholder="Entrez le capital" [(ngModel)]="capital" name="capital">
