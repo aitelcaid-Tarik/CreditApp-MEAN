@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CreditsService } from '../../services/credits.service';
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  acredits = [];
+
+  constructor(private creditService: CreditsService, private userService: UserService) { }
 
   ngOnInit(): void {
+    const currentUser = this.userService.getCurrentUser();
+    const query = { idClient: currentUser.id };
+
+    this.creditService.getCredits(query).subscribe(res => {
+
+      this.acredits = res.credits;
+
+    });
   }
 
 }

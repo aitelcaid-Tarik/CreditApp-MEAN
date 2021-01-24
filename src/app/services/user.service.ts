@@ -28,4 +28,8 @@ export class UserService {
   logOut(){
     localStorage.removeItem(AppUtil.AUTH_TOKEN);
   }
+
+  getCurrentUser() {
+    return JSON.parse(localStorage.getItem(AppUtil.USER_INFO)|| '{}');
+  }
 }
