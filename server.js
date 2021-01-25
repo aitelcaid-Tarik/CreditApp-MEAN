@@ -40,7 +40,7 @@ require('./config/passport')(passport);
 
 
 //Static public folder
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, './src/public')));
 
 app.get('/', (req, res) => {
     res.send('I am alive')
