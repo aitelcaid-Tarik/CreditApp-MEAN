@@ -16,12 +16,28 @@
       <mat-form-field>
         <input matInput type="password" placeholder="Entrer votre Mot de passe svp" [(ngModel)]="password"
           name="password">
-          <mat-icon matSuffix>vpn_key</mat-icon>
+        <mat-icon matSuffix>vpn_key</mat-icon>
       </mat-form-field>
 
-      <a [routerLink]="['../login']" class="btn btn-link">Se connecter</a>
-
       <button mat-raised-button type="submit" class="mt-5" color="primary"> VALIDER </button>
+
+      <p>Ou Se connecter avec :</p>
+
+      <div class="social-group d-flex justify-content-around">
+        <a type="button" class="socialicons-wrapper s-facebook" href="https://www.facebook.com/tarik.aitelcaid">
+          <img class="socialicons" src="../../../assets/socialmedia/facebook.svg" />
+        </a>
+        <a type="button" class="socialicons-wrapper s-google" href="https://www.google.com">
+          <img class="socialicons" src="../../../assets/socialmedia/search.svg" />
+        </a>
+        <a type="button" class="socialicons-wrapper s-linkedin" href="https://www.linkedin.com/in/aitelcaid-tarik/">
+          <img class="socialicons" src="../../../assets/socialmedia/linkedin.svg" />
+        </a>
+        <a type="button" class="socialicons-wrapper s-github" href="https://github.com/aitelcaid-Tarik/CreditApp-MEAN">
+          <img class="socialicons" src="../../../assets/socialmedia/github.svg" />
+        </a>
+      </div>
+
     </form>
 
   </mat-card>

@@ -40,7 +40,7 @@ export class RegisterComponent implements OnInit {
           return;
         }
         console.log("Votre compte a été créé");
-        return this.router.navigate(['../login']);
+        return this.router.navigate(['../../main/home']);
       }
     );
 
