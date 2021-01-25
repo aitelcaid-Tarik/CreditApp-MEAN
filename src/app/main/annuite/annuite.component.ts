@@ -13,9 +13,10 @@ export class AnnuiteComponent implements OnInit {
   capital: Number | undefined;
   taux: Number | undefined;
   duree: Number | undefined;
-  annuite: any;
+  annuite: any ;
   date: string = new Date().toString().substring(0, 24);
   idClient: string = "";
+  state: boolean = true;
 
   constructor(private creditService: CreditsService, private userService: UserService, private router: Router) { }
 
@@ -27,7 +28,7 @@ export class AnnuiteComponent implements OnInit {
   onCalculAnnuite() {
     if (!this.capital || !this.taux || !this.duree) {
       console.log("Tous les champs sont requis");
-      return
+      return;
     }
 
     const body = {
@@ -40,20 +41,22 @@ export class AnnuiteComponent implements OnInit {
       this.annuite = res;
     })
 
-    const credit = {
-      capital: this.capital,
-      taux: this.taux,
-      annuite: this.annuite,
-      duree: this.duree,
-      date: this.date,
-      idClient: this.idClient
+    if (this.state == false) {
+      const credit = {
+        capital: this.capital,
+        taux: this.taux,
+        annuite: this.annuite,
+        duree: this.duree,
+        date: this.date,
+        idClient: this.idClient
+      }
+
+      this.creditService.saveCredit(credit).subscribe(res => {
+        console.log('Votre credit a bien été enregistré');
+        this.router.navigate(['./annuite']);
+      })
     }
 
-    this.creditService.saveCredit(credit).subscribe(res => {
-      console.log('Votre credit a bien été enregistré');
-      this.router.navigate(['/annuite']);
-
-    })
-
   }
+
 }

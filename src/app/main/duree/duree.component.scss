@@ -36,5 +36,25 @@ mat-toolbar {
 }
 
 .mat-raised-button:hover {
-    background: #9aa9ff;
+    background: #1d3ddf;
+}
+
+mat-button-toggle-group {
+    width: 176px !important;
+    margin: 0 auto;
+    font-family: "Lato", sans-serif;
+}
+
+.mat-button-toggle-checked {
+    background-color: #7e8ee9 !important;
+    color: white;
+}
+
+h2 {
+    font-weight: 550;
+    text-align: center;
+    font-family: "Lato", sans-serif;
+    display: inline-block;
+    margin: 0 auto;
+    padding: 10px 30px;
 }

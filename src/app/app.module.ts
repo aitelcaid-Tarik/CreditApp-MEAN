@@ -34,6 +34,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { MatCarouselModule } from '@ngmodule/material-carousel';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import {MatIconModule} from '@angular/material/icon';
 import { TableComponent } from './main/table/table.component';
@@ -79,7 +80,8 @@ const AppRoutes: Routes = [
     FormsModule,
     RouterModule.forRoot(AppRoutes),
     CarouselModule,
-    MatIconModule
+    MatIconModule,
+    MatButtonToggleModule
   ],
   providers: [
     { provide: LocationStrategy, useClass: HashLocationStrategy },

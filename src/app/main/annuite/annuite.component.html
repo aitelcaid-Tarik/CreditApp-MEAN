@@ -2,8 +2,9 @@
 <app-slider></app-slider>
 <div fxLayoutAlign="center" class="main-div mat-elevation-z6">
     <mat-card fxFlex="35">
-        <mat-toolbar color="primary">Calculer l'annuite</mat-toolbar>
+        <mat-toolbar color="primary">Calculez l'annuite</mat-toolbar>
         <form (submit)="onCalculAnnuite()" fxLayoutAlign="stretch" fxLayout="column" class="login-form">
+            <h2 *ngIf="annuite != null"> l'annuite calculer est: {{annuite}} </h2>
 
             <mat-form-field>
                 <input matInput type="text" placeholder="Entrez le capital" [(ngModel)]="capital" name="capital">
@@ -16,7 +17,15 @@
             <mat-form-field>
                 <input matInput type="text" placeholder="Entrez la duree" [(ngModel)]="duree" name="duree">
             </mat-form-field>
-            <button mat-raised-button type="submit" class="mt-5" color="primary"> Calculer & Sauvegarder </button>
+
+            <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
+                <mat-button-toggle (click)="state=true"> Calculer </mat-button-toggle>
+                <mat-button-toggle (click)="state=false"> Sauvegarder </mat-button-toggle>
+            </mat-button-toggle-group>
+
+            <button mat-raised-button type="submit" class="mt-5" color="primary"> Valider </button>
+
+
         </form>
 
     </mat-card>

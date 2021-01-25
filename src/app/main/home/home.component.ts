@@ -8,9 +8,10 @@ import { UserService } from '../../services/user.service';
 })
 export class HomeComponent implements OnInit {
 
+  nomClient: string = "";
+  
   constructor(private userService: UserService) { }
 
-  nomClient: string = "";
   ngOnInit(): void {
     const user = this.userService.getCurrentUser();
     this.nomClient = user.name;

@@ -16,6 +16,7 @@ export class CapitalComponent implements OnInit {
   capital: any;
   date: string = new Date().toString().substring(0, 24);
   idClient: string = "";
+  state: boolean = true;
 
   constructor(private creditService: CreditsService, private userService: UserService, private router: Router) { }
 
@@ -39,21 +40,21 @@ export class CapitalComponent implements OnInit {
     this.creditService.calCapital(body).subscribe(res => {
       this.capital = res;
     })
+    if (this.state == false) {
+      const credit = {
+        capital: this.capital,
+        taux: this.taux,
+        annuite: this.annuite,
+        duree: this.duree,
+        date: this.date,
+        idClient: this.idClient
+      }
 
-    const credit = {
-      capital: this.capital,
-      taux: this.taux,
-      annuite: this.annuite,
-      duree: this.duree,
-      date: this.date,
-      idClient: this.idClient
+      this.creditService.saveCredit(credit).subscribe(res => {
+        console.log('Votre credit a bien été enregistré');
+        this.router.navigate(['/capital']);
+      })
     }
-
-    this.creditService.saveCredit(credit).subscribe(res => {
-      console.log('Votre credit a bien été enregistré');
-      this.router.navigate(['/capital']);
-    })
-
   }
 
 }

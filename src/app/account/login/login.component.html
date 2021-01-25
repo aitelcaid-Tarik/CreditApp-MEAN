@@ -9,14 +9,41 @@
       </mat-form-field>
 
       <mat-form-field>
-        <input matInput type="password" placeholder="Entrez votre Mot de passe" [(ngModel)]="password" name="password"> 
+        <input matInput type="password" placeholder="Entrez votre Mot de passe" [(ngModel)]="password" name="password">
         <mat-icon matSuffix>vpn_key</mat-icon>
       </mat-form-field>
 
-      <a [routerLink]="['../register']" class="btn btn-link">Créer un compte</a>
-
+      <div class="forget-remember-wrapper d-flex justify-content-around">
+        <div>
+          <div class="form-check d-flex">
+            <input type="checkbox" class="form-check-input" id="materialLoginFormRemember">
+            <label>Mémoriser</label>
+          </div>
+        </div>
+        <div>
+          <a href="">J'ai oublié Mot de passe ?</a>
+        </div>
+      </div>
       <button mat-raised-button type="submit" class="mt-5" color="primary"> Connexion </button>
-    </form>
 
+      <p>Je n'ai pas de compte ?
+        <a [routerLink]="['../register']">Créer un compte</a>
+      </p>
+      <p>Ou Se connecter avec :</p>
+      <div class="social-group d-flex justify-content-around">
+        <a type="button" class="socialicons-wrapper s-facebook" href="https://www.facebook.com/tarik.aitelcaid">
+          <img class="socialicons" src="../../../assets/socialmedia/facebook.svg" />
+        </a>
+        <a type="button" class="socialicons-wrapper s-google" href="https://www.google.com">
+          <img class="socialicons" src="../../../assets/socialmedia/search.svg" />
+        </a>
+        <a type="button" class="socialicons-wrapper s-linkedin" href="https://www.linkedin.com/in/aitelcaid-tarik/">
+          <img class="socialicons" src="../../../assets/socialmedia/linkedin.svg" />
+        </a>
+        <a type="button" class="socialicons-wrapper s-github" href="https://github.com/aitelcaid-Tarik/CreditApp-MEAN" >
+          <img class="socialicons" src="../../../assets/socialmedia/github.svg" />
+        </a>
+      </div>
+    </form>
   </mat-card>
 </div>
