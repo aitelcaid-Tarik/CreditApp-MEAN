@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService } from '../../services/user.service';
+import { FlashMessagesService } from 'angular2-flash-messages';
 
 @Component({
   selector: 'app-login',
@@ -12,14 +13,14 @@ export class LoginComponent implements OnInit {
   email: string = "";
   password: string = "";
 
-  constructor(private router: Router, private userService: UserService) { }
+  constructor(private router: Router, private userService: UserService, private flashMessagesService: FlashMessagesService) { }
 
   ngOnInit(): void {
   }
 
   onLogin() {
     if (!this.email || !this.password) {
-      console.log("Tous les champs sont requis");
+      this.flashMessagesService.show('Tous les champs sont requis', { cssClass: 'alert-danger', timeout: 1000 });
       return false;
     }
 
@@ -31,11 +32,12 @@ export class LoginComponent implements OnInit {
 
     this.userService.autho(user).subscribe(res => {
       if (!res.success) {
-        console.log(res.message);
+        this.flashMessagesService.show(res.message, { cssClass: 'alert-danger', timeout: 1000 });
         return false;
       }
 
       this.userService.saveUseData(res.token, res.user);
+      this.flashMessagesService.show('bien connecte', { cssClass: 'alert-success', timeout: 1000 });
       this.router.navigate(['/home']);
 
       return;

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MailService } from '../../services/mail.service';
+import { FlashMessagesService } from 'angular2-flash-messages';
+
 
 @Component({
   selector: 'app-contact-us',
@@ -8,11 +10,11 @@ import { MailService } from '../../services/mail.service';
 })
 export class ContactUsComponent implements OnInit {
 
-  email: string = "aitelcaid.tarik@gmail.com";
+  email: string = "aitelcaid.tarik@um5r.ac.ma";
   objet: string = "";
   message: string = "";
 
-  constructor(private mailService: MailService) { }
+  constructor(private mailService: MailService, private flashMessagesService: FlashMessagesService) { }
 
   ngOnInit(): void {
 
@@ -21,7 +23,7 @@ export class ContactUsComponent implements OnInit {
   onSendMail() {
 
     if (!this.email || !this.objet || !this.message) {
-      console.log("Tous les champs sont requis");
+      this.flashMessagesService.show('Tous les champs sont requis', { cssClass: 'alert-danger', timeout: 1000 });
       return;
     }
 
@@ -34,7 +36,7 @@ export class ContactUsComponent implements OnInit {
     console.log(body);
 
     this.mailService.sendMail(body).subscribe(res => {
-      console.log("Email envoyé!!!");
+      this.flashMessagesService.show('Email envoyé!!!', { cssClass: 'alert-success', timeout: 1000 });
     });
 
   }

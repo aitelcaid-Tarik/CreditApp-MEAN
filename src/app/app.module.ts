@@ -38,6 +38,8 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import {MatIconModule} from '@angular/material/icon';
 import { TableComponent } from './main/table/table.component';
+import { FlashMessagesModule } from 'angular2-flash-messages';
+
 
 const AppRoutes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -81,7 +83,8 @@ const AppRoutes: Routes = [
     RouterModule.forRoot(AppRoutes),
     CarouselModule,
     MatIconModule,
-    MatButtonToggleModule
+    MatButtonToggleModule,
+    FlashMessagesModule.forRoot()
   ],
   providers: [
     { provide: LocationStrategy, useClass: HashLocationStrategy },

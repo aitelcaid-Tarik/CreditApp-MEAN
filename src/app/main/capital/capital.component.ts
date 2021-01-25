@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService } from '../../services/user.service';
 import { CreditsService } from '../../services/credits.service';
+import { FlashMessagesService } from 'angular2-flash-messages';
+
 
 @Component({
   selector: 'app-capital',
@@ -18,7 +20,7 @@ export class CapitalComponent implements OnInit {
   idClient: string = "";
   state: boolean = true;
 
-  constructor(private creditService: CreditsService, private userService: UserService, private router: Router) { }
+  constructor(private creditService: CreditsService, private userService: UserService, private router: Router, private flashMessagesService: FlashMessagesService) { }
 
   ngOnInit(): void {
     const user = this.userService.getCurrentUser();
@@ -27,7 +29,7 @@ export class CapitalComponent implements OnInit {
 
   onCalculCapital() {
     if (!this.annuite || !this.taux || !this.duree) {
-      console.log("Tous les champs sont requis");
+      this.flashMessagesService.show('Tous les champs sont requis', { cssClass: 'alert-danger', timeout: 1000 });
       return
     }
 
@@ -52,7 +54,7 @@ export class CapitalComponent implements OnInit {
         }
 
         this.creditService.saveCredit(credit).subscribe(res => {
-          console.log('Votre credit a bien été enregistré');
+          this.flashMessagesService.show('Votre credit a bien été enregistré', { cssClass: 'alert-success', timeout: 1000 });
           this.router.navigate(['/capital']);
         })
       }, 1000);

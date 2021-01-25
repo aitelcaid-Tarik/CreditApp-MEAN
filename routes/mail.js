@@ -5,8 +5,8 @@ const mailGun = require('nodemailer-mailgun-transport');
 
 const auth = {
     auth: {
-        api_key: '',
-        domain: ''
+        api_key: 'YOUR_API_KEY',
+        domain: 'YOUR_DOMAIN'
     }
 };
 
@@ -35,7 +35,6 @@ router.post('/send', (req, res) => {
 
     sendMail(email, subject, text, function (err, data) {
         if (err) {
-            console.log('Data: ', req.body);
             console.log('ERROR: ', err);
             return res.status(500).json({ message: err.message || 'Internal Error' });;
         }

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from 'src/app/services/user.service';
 import { Router } from '@angular/router';
+import { FlashMessagesService } from 'angular2-flash-messages';
+
 
 
 @Component({
@@ -14,7 +16,7 @@ export class RegisterComponent implements OnInit {
   email: string = "";
   password: string = "";
 
-  constructor(private userService: UserService, private router: Router) { }
+  constructor(private userService: UserService, private router: Router, private flashMessagesService: FlashMessagesService) { }
 
   ngOnInit(): void {
 
@@ -23,7 +25,7 @@ export class RegisterComponent implements OnInit {
   onRegister() {
 
     if (!this.name || !this.email || !this.password) {
-      console.log("Tous les champs sont requis");
+      this.flashMessagesService.show('Tous les champs sont requis', { cssClass: 'alert-danger', timeout: 1000 });
       return false;
     }
 
@@ -39,7 +41,7 @@ export class RegisterComponent implements OnInit {
           console.log(res.message);
           return;
         }
-        console.log("Votre compte a été créé");
+        this.flashMessagesService.show('Votre compte a été créé', { cssClass: 'alert-success', timeout: 1000 });
         return this.router.navigate(['../login']);
       }
     );
