@@ -58,9 +58,6 @@ export class AnnuiteComponent implements OnInit {
           this.router.navigate(['./annuite']);
         })
       }, 1000);
-
     }
-
   }
-
 }

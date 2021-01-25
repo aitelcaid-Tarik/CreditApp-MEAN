@@ -41,13 +41,13 @@ router.post('/calculDuree', passport.authenticate('jwt', { session: false }), (r
 
     const c = parseFloat(req.body.capital);
     const taux = parseFloat(req.body.taux);
-    const a = parseFloat(req.query.annuite);
+    const a = parseFloat(req.body.annuite);
 
     const t = Math.pow(1 + taux, 1 / 12) - 1;
 
-    const result = ((Math.log(a / (a - t * c)) / (Math.log(1 + t))) + 0.5);
+    const result = parseInt(((Math.log(a / (a - t * c)) / (Math.log(1 + t))) + 0.5));
 
-    res.send(result.toFixed(2));
+    res.send(result + '');
 
 });
 

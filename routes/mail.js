@@ -39,7 +39,7 @@ router.post('/send', (req, res) => {
             return res.status(500).json({ message: err.message || 'Internal Error' });;
         }
         console.log('Email envoyé!!');
-        return res.json({ message: 'Email envoyé!!!' });;
+        return res.json({ message: 'Email envoyé!!!!' });;
     });
 });
 
