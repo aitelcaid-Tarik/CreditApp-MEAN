@@ -24,21 +24,21 @@
                 <i class="fas fa-phone"></i>
                 <p> +212 6 30 96 36 36 </p>
             </div>
-
         </div>
 
-
-        <form fxLayoutAlign="stretch" fxLayout="column">
+        <form (submit)="onSendMail()" fxLayoutAlign="stretch" fxLayout="column">
             <div class="row">
                 <div class="form-group col-lg-6">
-                    <input class="form-control" type="text" placeholder="Name">
+                    <input class="form-control" type="text" placeholder="Objet" [(ngModel)]="objet" name="objet">
                 </div>
                 <div class="form-group col-lg-6">
-                    <input class="form-control" type="email" placeholder="Email" value="{{email}}">
+                    <input class="form-control" type="email" placeholder="Email" [(ngModel)]="email" name="email"
+                        value="{{email}}">
                 </div>
             </div>
             <div class="form-group">
-                <textarea class="form-control" rows="3" placeholder="message"></textarea>
+                <textarea class="form-control" rows="3" type="text" placeholder="Message" [(ngModel)]="message"
+                    name="message"></textarea>
 
             </div>
 

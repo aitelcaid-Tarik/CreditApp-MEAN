@@ -42,19 +42,21 @@ export class DureeComponent implements OnInit {
     })
 
     if (this.state == false) {
-      const credit = {
-        capital: this.capital,
-        taux: this.taux,
-        annuite: this.annuite,
-        duree: this.duree,
-        date: this.date,
-        idClient: this.idClient
-      }
+      setTimeout(() => {
+        const credit = {
+          capital: this.capital,
+          taux: this.taux,
+          annuite: this.annuite,
+          duree: this.duree,
+          date: this.date,
+          idClient: this.idClient
+        }
 
-      this.creditService.saveCredit(credit).subscribe(res => {
-        console.log('Votre credit a bien été enregistré');
-        this.router.navigate(['/duree']);
-      })
+        this.creditService.saveCredit(credit).subscribe(res => {
+          console.log('Votre credit a bien été enregistré');
+          this.router.navigate(['/duree']);
+        })
+      }, 1000);
     }
   }
 }

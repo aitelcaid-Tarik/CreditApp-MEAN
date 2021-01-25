@@ -3,8 +3,6 @@ const router = express.Router();
 const jwt = require('jsonwebtoken');
 const User = require('../models/user.js');
 
-module.exports = router;
-
 //login
 router.post('/autho', (req, res) => {
     const email = req.body.email;
@@ -91,3 +89,4 @@ router.post('/register', (req, res) => {
 });
 
 
+module.exports = router;

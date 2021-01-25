@@ -43,6 +43,8 @@
     "mdb-angular-ui-kit": "^1.0.0-alpha1",
     "mongoose": "^5.11.12",
     "ngx-owl-carousel-o": "^5.0.0",
+    "nodemailer": "^6.4.17",
+    "nodemailer-mailgun-transport": "^2.0.2",
     "passport": "^0.4.1",
     "passport-jwt": "^4.0.0",
     "popper.js": "^1.16.1",

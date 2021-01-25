@@ -13,6 +13,7 @@ const app = express();
 
 const UserRoutes = require('./routes/users.js');
 const CreditRoutes = require('./routes/credits.js');
+const SendMailRoutes = require('./routes/mail.js');
 
 
 //Database Connection
@@ -26,10 +27,10 @@ mongoose.connection.on('error', (err) => {
 
 //---------------- MiddleWares -------------//
 //CROS MW
-app.use(cors());
+app.use(cors({ origin: "*" }));
 //Body Parser MW
 app.use(bodyParser.json());
-
+app.use(express.urlencoded({ extended: false }));
 
 //Passport MW
 app.use(passport.initialize());
@@ -45,8 +46,10 @@ app.get('/', (req, res) => {
     res.send('I am alive')
 });
 
+
 app.use('/users', UserRoutes);
-app.use('/credits', CreditRoutes)
+app.use('/credits', CreditRoutes);
+app.use('/mail', SendMailRoutes);
 
 // Listen to the App Engine-specified port, or 8080 otherwise
 const PORT = process.env.PORT || 8080;

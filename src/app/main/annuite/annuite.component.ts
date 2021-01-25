@@ -13,7 +13,7 @@ export class AnnuiteComponent implements OnInit {
   capital: Number | undefined;
   taux: Number | undefined;
   duree: Number | undefined;
-  annuite: any ;
+  annuite: any;
   date: string = new Date().toString().substring(0, 24);
   idClient: string = "";
   state: boolean = true;
@@ -42,19 +42,22 @@ export class AnnuiteComponent implements OnInit {
     })
 
     if (this.state == false) {
-      const credit = {
-        capital: this.capital,
-        taux: this.taux,
-        annuite: this.annuite,
-        duree: this.duree,
-        date: this.date,
-        idClient: this.idClient
-      }
+      setTimeout(() => {
+        const credit = {
+          capital: this.capital,
+          taux: this.taux,
+          annuite: this.annuite,
+          duree: this.duree,
+          date: this.date,
+          idClient: this.idClient
+        }
 
-      this.creditService.saveCredit(credit).subscribe(res => {
-        console.log('Votre credit a bien été enregistré');
-        this.router.navigate(['./annuite']);
-      })
+        this.creditService.saveCredit(credit).subscribe(res => {
+          console.log('Votre credit a bien été enregistré');
+          this.router.navigate(['./annuite']);
+        })
+      }, 1000);
+
     }
 
   }

@@ -41,19 +41,21 @@ export class CapitalComponent implements OnInit {
       this.capital = res;
     })
     if (this.state == false) {
-      const credit = {
-        capital: this.capital,
-        taux: this.taux,
-        annuite: this.annuite,
-        duree: this.duree,
-        date: this.date,
-        idClient: this.idClient
-      }
+      setTimeout(() => {
+        const credit = {
+          capital: this.capital,
+          taux: this.taux,
+          annuite: this.annuite,
+          duree: this.duree,
+          date: this.date,
+          idClient: this.idClient
+        }
 
-      this.creditService.saveCredit(credit).subscribe(res => {
-        console.log('Votre credit a bien été enregistré');
-        this.router.navigate(['/capital']);
-      })
+        this.creditService.saveCredit(credit).subscribe(res => {
+          console.log('Votre credit a bien été enregistré');
+          this.router.navigate(['/capital']);
+        })
+      }, 1000);
     }
   }
 
