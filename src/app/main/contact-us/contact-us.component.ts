@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from '../../services/user.service';
 import { MailService } from '../../services/mail.service';
 
 @Component({
@@ -9,15 +8,14 @@ import { MailService } from '../../services/mail.service';
 })
 export class ContactUsComponent implements OnInit {
 
-  email: string = "";
+  email: string = "aitelcaid.tarik@gmail.com";
   objet: string = "";
   message: string = "";
 
-  constructor(private userService: UserService, private mailService: MailService) { }
+  constructor(private mailService: MailService) { }
 
   ngOnInit(): void {
-    const user = this.userService.getCurrentUser();
-    this.email = user.email;
+
   }
 
   onSendMail() {
