@@ -975,7 +975,7 @@ class RegisterComponent {
         };
         this.userService.createAccount(user).subscribe(res => {
             if (!res.success) {
-                console.log(res.message);
+                this.flashMessagesService.show(res.message, { cssClass: 'alert-danger', timeout: 1000 });
                 return;
             }
             this.flashMessagesService.show('Votre compte a été créé', { cssClass: 'alert-success', timeout: 1000 });
@@ -1296,7 +1296,7 @@ class LoginComponent {
         };
         this.userService.autho(user).subscribe(res => {
             if (!res.success) {
-                this.flashMessagesService.show(res.message, { cssClass: 'alert-success', timeout: 1000 });
+                this.flashMessagesService.show(res.message, { cssClass: 'alert-danger', timeout: 1000 });
                 return false;
             }
             this.userService.saveUseData(res.token, res.user);
