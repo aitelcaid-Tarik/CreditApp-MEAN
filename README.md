@@ -1,3 +1,15 @@
+## App Demo [Click Here >](https://ait-credit.herokuapp.com)
+
+<video width="320" height="240" controls>
+  <source src="ScreenShot/Demo.mp4" type="video/mp4">
+</video>
+
+<img src="ScreenShot/1.png"/>
+<img src="ScreenShot/3.png"/>
+<img src="ScreenShot/5.png"/>
+<img src="ScreenShot/6.png"/>
+<img src="ScreenShot/7.png"/>
+
 # CreditApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.6.
