@@ -1,8 +1,9 @@
 ## App Demo [Click Here >](https://ait-credit.herokuapp.com)
 
-<video>
-  <source src="ScreenShot/Demo.mp4" type="video/mp4">
-</video>
+<iframe width="560" height="315"
+src="ScreenShot/Demo.mp4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+
 
 <img src="ScreenShot/1.png"/>
 <img src="ScreenShot/3.png"/>
