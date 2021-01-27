@@ -1,6 +1,6 @@
 ## App Demo [Click Here >](https://ait-credit.herokuapp.com)
 
-<video width="320" height="240" controls>
+<video>
   <source src="ScreenShot/Demo.mp4" type="video/mp4">
 </video>
 
